@@ -34,6 +34,7 @@ camera.contrast(2)  # 對比度
 camera.quality(10)  # 質量(最高)
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)#伺服器跟伺服器對連用tcp協定雙向溝通
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.bind(('', 80))#可以跟sever任意連接
 s.listen(5)#最多5人連接
 
